@@ -53,7 +53,7 @@ AppAsset::register($this);
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-               
+
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -65,11 +65,13 @@ AppAsset::register($this);
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Editar Perfil</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Deslogar   <?php $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];?></a>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Deslogar   <?php
+                                $menuItems[] = [
+                                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                                    'url' => ['/site/logout'],
+                                    'linkOptions' => ['data-method' => 'post']
+                                ];
+                                ?></a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -93,17 +95,21 @@ AppAsset::register($this);
                             <!-- /input-group -->
                         </li>
                         <li>
+                            <a href="/site/index" class="btn btn-primary"><i class="fa fa-edit fa-fw"></i> Home<span class="fa arwrow"></span></a>
+                            <?= Html::a('Home', ['site/index'],['class'=>'btn btn-primarybtn btn-primary']) ?>
+                        </li>
+                        <li>
                             <a href="#" class="btn btn-primary"><i class="fa fa-edit fa-fw"></i> Gerenciar Cadastrado<span class="fa arwrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                   <?= Html::a('Produtos', ['produtos/index']) ?>
+                                    <?= Html::a('Produtos', ['produtos/index']) ?>
                                 </li>
                                 <li>
 
                                     <?= Html::a('Clientes', ['clientes/index']) ?>
                                 </li>
                                 <li>
-                                  <?= Html::a('Iníciar Vendas', ['vendas/index']) ?>
+                                    <?= Html::a('Iníciar Vendas', ['vendas/index']) ?>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -134,14 +140,14 @@ AppAsset::register($this);
         <div id="page-wrapper">
 
             <!-- /.row -->
-           
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
-                <?= $content ?>
-       
+
+            <?=
+            Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ])
+            ?>
+            <?= $content ?>
+
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
